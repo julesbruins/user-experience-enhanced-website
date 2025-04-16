@@ -40,7 +40,7 @@
         {% for excercise in task.exercise %}
         <article>
         <div class="container-card">   
-        <img src="https://fdnd-agency.directus.app/assets/{{ excercise.image }}" alt="" class="exercise-img">
+        <img src="https://fdnd-agency.directus.app/assets/{{ excercise.image.filename_disk }}" width="{{ excercise.image.width }}" height="{{ excercise.image.height }}" alt="" class="exercise-img">
             
             <div class="bottom-grid">
                 <h3>{{ excercise.title }}</h3>

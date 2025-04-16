@@ -48,7 +48,7 @@ app.get('/', async function (request, response) {               // Je haalt de r
 
 app.get('/task/:id', async function (request, response) {       // Je haalt de id op die uit de filter (<a> van task.lquid) komt. 
   const task = request.params.id;                               // Je maakt een variabele aan voor de opgevraagde id
-  const taskResponse = await fetch(`https://fdnd-agency.directus.app/items/dropandheal_task/?fields=*.*&filter={"id":"${task}"}&limit=1`) // De variable kan je in de link terug laten komen + door de fields komen taken en opdrachten samen in een API.
+  const taskResponse = await fetch(`https://fdnd-agency.directus.app/items/dropandheal_task/?fields=*.*.*&filter={"id":"${task}"}&limit=1`) // De variable kan je in de link terug laten komen + door de fields komen taken en opdrachten samen in een API.
   const taskResponseJSON = await taskResponse.json()            // Je zet de data om in JSON
 
   response.render('task.liquid', {task: taskResponseJSON.data?.[0] || [] }) 
