@@ -39,6 +39,14 @@ header {
 
 main {
     background-color: var(--background-color);
+    background-image:
+            radial-gradient(circle at -10em 50%,
+                red,
+                transparent 30em),
+            radial-gradient(circle at calc(100% + 10em) 50%,
+                var(--accent-color),
+                transparent 30em);
+
     padding: 2.5rem 2rem 2rem 2rem;
 
     display: flex;
