@@ -32,7 +32,22 @@
             <p class="empty-state">Er zijn nog geen community drops voor deze opdracht, deel jouw ervaring als eerst!</p>
         {% endfor %}
 
-        <a href="/post-page/{{id}}">Plaats bericht</a>
+        <div class="div-button">
+            <a href="#post-form" class="post-button">Plaats bericht</a>
+        </div>
+
+        <link rel="stylesheet" href="/styles/post-page.css"> 
+        
+        <form method="POST" action="/community-drop/{{ id }}" data-enhanced="form" id="post-form">
+            <label for="">Naam:
+                <input type="text" name="name" required>
+            </label>
+            <label for="">Wat heeft de opdracht jou gebracht?
+                <textarea name="community_drop" id="community_drop" rows="4" required></textarea>
+            </label>
+            <button type="submit" class="post-btn">Plaats bericht</button>
+        </form>
+        
     </main>   
                     
 

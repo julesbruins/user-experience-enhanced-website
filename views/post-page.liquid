@@ -1,7 +1,7 @@
-{% render 'partials/head.liquid' %}
+{% comment %} {% render 'partials/head.liquid' %}
 <link rel="stylesheet" href="/styles/post-page.css">
 
-<form method="POST" action="/community-drop/{{ id }}">
+<form method="POST" action="/community-drop/{{ id }}" data-enhanced="form">
     <label for="">Naam:
         <input type="text" name="name" required>
     </label>
@@ -9,4 +9,4 @@
         <textarea name="community_drop" id="community_drop" rows="4" required></textarea>
     </label>
     <button type="submit" class="post-btn">Plaats bericht</button>
-</form>
+</form> {% endcomment %}
