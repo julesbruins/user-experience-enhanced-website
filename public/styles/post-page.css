@@ -1,6 +1,6 @@
 form {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    justify-content: center;
     background-color: var(--background-color);
     padding: 2rem;
     
@@ -29,6 +29,7 @@ form {
         background-color: var(--background-color-lighter);
         color: var(--text-color);
         font-family: var(--secondary-font);
+        font-size: .8rem;
 
         &:hover {
             background-color: var(--background-color);
