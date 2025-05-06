@@ -132,10 +132,11 @@ form {
 form [type="button"] {
     display:inline;
     font-style: italic;
+    font-weight: 700;
     margin-top: 1em;
   }
 
-  form {
+form {
     display: grid;
     justify-content: center;
     background-color: var(--background-color);
@@ -172,4 +173,9 @@ form [type="button"] {
             background-color: var(--background-color);
         }
     }
+}
+
+input[type="text"], textarea {
+    color: var(--text-color);
+    white-space: normal;
 }
