@@ -8,6 +8,10 @@
     src: url('../assets/Figtree-VariableFont_wght.ttf');
 }
 
+@view-transition {
+    navigation: auto;
+}
+
 /* CSS RESET */
 *, *::before, *::after {
     margin: 0;
