@@ -20,4 +20,32 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+// POST progressive enhanced
+document.documentElement.classList.add("js");
+
+const scrolldownButton = document.querySelector(".post-button");
+console.log(scrolldownButton);
+
+const closeButton = document.querySelector('[type="button"]');
+const form = document.querySelector("form");
+
+
+scrolldownButton.addEventListener("click", toggleForm);
+form.addEventListener("click", toggleForm);
+window.addEventListener("keyup", handleKeyup);
+
+
+function handleKeyup(event) {
+  if (event.code == "Escape") {
+    form.classList.remove("is-visible");
+  }
+}
+
+function toggleForm(event) {
+  event.preventDefault();
+  console.log("is-visible")
+  
+  form.classList.toggle("is-visible");
+}
+
 

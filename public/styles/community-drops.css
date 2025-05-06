@@ -1,3 +1,10 @@
+html {
+    @media (prefers-reduced-motion: no-preference) {
+        scroll-behavior: smooth;
+    }
+}
+
+
 body {
     background-color: var(--background-color-lighter);
 }
@@ -39,13 +46,15 @@ header {
 
 main {
     background-color: var(--background-color);
-    background-image:
+    /* background-image:
             radial-gradient(circle at -10em 50%,
                 red,
                 transparent 30em),
             radial-gradient(circle at calc(100% + 10em) 50%,
                 var(--accent-color),
-                transparent 30em);
+                transparent 30em); */
+
+    /* VRAGEN WAAROM NIET WERK ^ */
 
     padding: 2.5rem 2rem 2rem 2rem;
 
@@ -97,4 +106,70 @@ main {
 
 .empty-state {
     margin-bottom: 2.5rem;
+}
+
+
+
+/* PE posten */
+form {
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    
+    translate:0 100%;
+    
+    @media (prefers-reduced-motion:no-preference) {
+      transition:.3s;
+    }
+    
+    &.is-visible {
+      translate:0 0;
+    }
+  }
+  
+  
+form [type="button"] {
+    display:inline;
+    font-style: italic;
+    margin-top: 1em;
+  }
+
+  form {
+    display: grid;
+    justify-content: center;
+    background-color: var(--background-color);
+    padding: 2rem;
+    
+    label {
+        font-family: var(--secondary-font);
+        color: var(--text-color);
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        gap: .5rem;
+    }
+    input, textarea {
+        background-color: var(--background-color-lighter);
+        border: none;
+        border-radius: 1rem;
+        max-width: 75ch;
+        padding: .5rem;
+    }
+
+    button {
+        border: var(--border) ;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        padding: 4px 16px;
+        width: fit-content;
+        background-color: var(--background-color-lighter);
+        color: var(--text-color);
+        font-family: var(--secondary-font);
+        font-size: .8rem;
+
+        &:hover {
+            background-color: var(--background-color);
+        }
+    }
 }
