@@ -55,3 +55,46 @@ function toggleForm(event) {
 }
 
 
+
+// CLIENT SIDE FETCH
+const button = document.querySelector(".post-btn")
+const postForm = document.querySelector("#post-form")
+
+
+button.addEventListener("click", async function(event) {
+   event.preventDefault()
+
+   let formData = new FormData(postForm)
+   console.log("formData", formData)
+
+    const response = await fetch(postForm.action, {
+        method: postForm.method,
+        body: new URLSearchParams(formData)
+      })
+    
+    const responseText = await response.text()
+    console.log("responseText", responseText)
+
+    const parser = new DOMParser()
+    const responseDOM = parser.parseFromString(responseText, 'text/html')
+    console.log("responseDOM", responseDOM)
+
+    const newMessage = responseDOM.querySelector("main article:last-of-type")
+    console.log("new message", newMessage)
+    const lastMessage = document.querySelector("main article:last-of-type")
+    console.log("lastmessage", lastMessage)
+    lastMessage.after(newMessage)
+    form.classList.toggle("is-visible");
+
+    const formNameField = document.querySelector("form input")
+    const formMessageField = document.querySelector("form textarea")
+
+    formNameField.value = ""
+    formMessageField.value = ""
+
+})
+
+
+
+
+

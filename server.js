@@ -55,7 +55,7 @@ app.get('/post-page/:id', async function (request, response) {
 
 
 app.get('/community-drops/:id', async function (request, response) {
-  const messagesResponse = await fetch(`https://fdnd-agency.directus.app/items/dropandheal_messages?filter={"_and":[{"exercise":{"_eq":"${request.params.id}"}},{"from":{"_contains":"Jules_"}}]}`)
+  const messagesResponse = await fetch(`https://fdnd-agency.directus.app/items/dropandheal_messages?filter={"_and":[{"exercise":{"_eq":"${request.params.id}"}},{"from":{"_contains":"Jules_"}}]}&sort=-created`)
   const messagesResponseJSON = await messagesResponse.json()
 
 
@@ -64,6 +64,7 @@ app.get('/community-drops/:id', async function (request, response) {
 
 
 app.post('/community-drop/:id', async function (request, response) {
+  console.log("post-route")
   await fetch('https://fdnd-agency.directus.app/items/dropandheal_messages', {      // Je stuurt de message naar deze API
     method: 'POST',                                                                 // Je gebruikt de POST methode
     body: JSON.stringify({
