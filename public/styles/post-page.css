@@ -1,4 +1,4 @@
-form {
+/* form {
     display: grid;
     justify-content: center;
     background-color: var(--background-color);
@@ -35,7 +35,7 @@ form {
             background-color: var(--background-color);
         }
     }
-}
+} */
 
 .succes-message {
     background-color: red;
