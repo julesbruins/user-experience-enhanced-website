@@ -47,14 +47,17 @@ header {
 main {
     background-color: var(--background-color);
     background-image:
-            radial-gradient(circle at -10em 50%,
-                red,
+            radial-gradient(
+                circle at -20em 50%,
+                var(--accent-color-one),
                 transparent 30em),
-            radial-gradient(circle at calc(100% + 10em) 50%,
-                var(--accent-color),
+            radial-gradient(
+                circle at calc(100% + 20em) 50%,
+                var(--accent-color-one),
                 transparent 30em);
+    background-attachment: fixed;
 
-    /* VRAGEN WAAROM NIET WERK ^ */
+    
 
     padding: 2.5rem 2rem 2rem 2rem;
 
@@ -69,11 +72,6 @@ main {
     }
 
 
-    .div-button {
-        display: flex;
-        justify-self: center;
-
-    }
     .post-button {
         border-radius: var(--border-radius);
         background-color: var(--accent-color-one);
@@ -109,10 +107,13 @@ main {
 }
 
 .succes-message {
-    background-color: red;
+    background-color: var(--accent-color-one);
+    padding: .5rem 1rem;
+    border-radius: var(--border-radius);
     position: fixed;
-    bottom: 10vh;
-    left: 2vw;
+    top: 10vw;
+    left: 50%;
+    transform: translate(-50%);
     opacity: 0;
     transition: opacity .7s ease;
     &.show {
