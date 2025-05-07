@@ -15,7 +15,12 @@
         <div class="progress-done-ex"></div>
     </div>
 
-    <img class="exercise-image" src="https://fdnd-agency.directus.app/assets/{{ exercise.image.id }}" alt="">
+    <picture>
+        <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ exercise.image.id }}?format=avif">
+        <source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ exercise.image.id }}?format=webp">
+        <img class="exercise-image" src="https://fdnd-agency.directus.app/assets/{{ exercise.image.id }}" alt="">
+    </picture>
+    
 </main>
 
 {% render 'partials/foot.liquid' %}

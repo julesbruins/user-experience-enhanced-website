@@ -35,7 +35,9 @@ p, ul {
     }
 
 
-    .exercise-image {
+    .exercise-image, 
+    source, 
+    picture {
         grid-row: 1;
         height: 18rem;
         width: 100%;

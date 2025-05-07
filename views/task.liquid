@@ -41,9 +41,10 @@
         <article>
         <div class="container-card">   
             <picture>
-                <source srcset="" media="(min-width: 600px)" />
+                <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ excercise.image.filename_disk }}?format=avif">
+                <source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ excercise.image.filename_disk }}?format=webp">
                 <img src="https://fdnd-agency.directus.app/assets/{{ excercise.image.filename_disk }}" width="{{ excercise.image.width }}" height="{{ excercise.image.height }}" alt="" class="exercise-img">
-              </picture>
+            </picture>
             
             <div class="bottom-grid">
                 <h3>{{ excercise.title }}</h3>
