@@ -132,7 +132,7 @@ main {
     aspect-ratio: 1;
     border-radius: 50%;
     border: 8px solid var(--text-color);
-    border-right-color: var(--accent-color-one);
+    border-right-color: var(--accent-color);
     animation: loader 1s infinite linear;
 
     &.show {
