@@ -38,6 +38,7 @@ app.get('/exercise/:id', async function (request, response) {
   const exercise = request.params.id;
   const exerciseResponse = await fetch(`https://fdnd-agency.directus.app/items/dropandheal_exercise/?fields=*.*&filter={"id":"${exercise}"}&limit=1`)
   const exerciseResponseJSON = await exerciseResponse.json()
+  console.log(exerciseResponseJSON)
 
   const messagesResponse = await fetch(`https://fdnd-agency.directus.app/items/dropandheal_messages?filter={"_and":[{"exercise":{"_eq":"${request.params.id}"}},{"from":{"_contains":"Jules_"}}]}`)
   const messagesResponseJSON = await messagesResponse.json()
@@ -64,16 +65,12 @@ app.get('/community-drops/:id', async function (request, response) {
   const taskId = excerciseResponseJSON.data[0].task;
   const taskResponse = await fetch(`https://fdnd-agency.directus.app/items/dropandheal_task/?fields=*&filter={"id":"${taskId}"}&limit=1`)
   const taskResponseJSON = await taskResponse.json()
-  console.log(taskResponseJSON.data)
-// haal theme op van de task met de bijbehorende opdrachten
-// geef die mee aan de view
 
   response.render('community-drops.liquid', { id: request.params.id, messages: messagesResponseJSON.data, task: taskResponseJSON.data?.[0] || [], succes_message: request.query.succes })
 })
 
 
 app.post('/community-drop/:id', async function (request, response) {
-  console.log("post-route")
   await fetch('https://fdnd-agency.directus.app/items/dropandheal_messages', {      // Je stuurt de message naar deze API
     method: 'POST',                                                                 // Je gebruikt de POST methode
     body: JSON.stringify({

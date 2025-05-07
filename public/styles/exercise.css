@@ -120,3 +120,13 @@ p, ul {
     border-radius: 7px 0px 0px 7px;
 }
 
+.close-btn {
+    border: none;
+    position: absolute;
+    top: 3vw;
+    left: 2vw;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}

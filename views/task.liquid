@@ -1,25 +1,26 @@
 {% render 'partials/head.liquid' %}
 
-<header class="theme-{{ task.theme }}">
-  <h1 class="md">{{ task.title }}</h1>
-  <button class="open-button" aria-label="open menu"><svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M10.002 1L5.50097 5.50098L0.999994 1" stroke="#A6A6A6" stroke-width="1.00189" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-  </button>
-    <div class="progress">
-        <div class="progress-done"></div>
+    <header class="theme-{{ task.theme }}">
+        <h1 class="md">{{ task.title }}</h1>
+        <button class="open-button" aria-label="open menu"><svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.002 1L5.50097 5.50098L0.999994 1" stroke="#A6A6A6" stroke-width="1.00189" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        
+        <div class="progress">
+                <div class="progress-done"></div>
+        </div>
+        <p class="text">10% volbracht</p>
+    </header>
+
+    <div class="nav-container">
+        <a class="nav-links xs" href="/task/1"><img src="../assets/blue.png" alt=""><p>Het verlies aanvaarden</p></a>
+        <a class="nav-links xs" href="/task/2"><img src="../assets/red.png" alt=""><p>De pijn doorvoelen</p></a>
+        <a class="nav-links xs" href="/task/3"><img src="../assets/green.png" alt=""><p>Verder in verandering</p></a>
+        <a class="nav-links xs" href="/task/4"><img src="../assets/purple.png" alt=""><p>Emotioneel verder gaan</p></a>        
     </div>
-    <p class="text">10% volbracht</p>
-</header>
 
 <main class="theme-{{ task.theme }}">
-    <div class="nav-container">
-            <a class="nav-links xs" href="/task/1"><img src="../assets/blue.png" alt=""><p>Het verlies aanvaarden</p></a>
-            <a class="nav-links xs" href="/task/2"><img src="../assets/red.png" alt=""><p>De pijn doorvoelen</p></a>
-            <a class="nav-links xs" href="/task/3"><img src="../assets/green.png" alt=""><p>Verder in verandering</p></a>
-            <a class="nav-links xs" href="/task/4"><img src="../assets/purple.png" alt=""><p>Emotioneel verder gaan</p></a>
-            
-    </div>
 
 
     <section class="intro">
