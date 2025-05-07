@@ -136,6 +136,7 @@ main {
 
     &.show {
         display: inline-block;
+        margin: 0 auto;
         animation-play-state: running;
     }
     &.hide {
@@ -171,6 +172,7 @@ form [type="button"] {
     font-style: italic;
     font-weight: 700;
     margin-top: 1em;
+    font-size: 1em;
   }
 
 form {
@@ -204,7 +206,7 @@ form {
         background-color: var(--background-color-lighter);
         color: var(--text-color);
         font-family: var(--secondary-font);
-        font-size: .8rem;
+        font-size: 1rem;
 
         &:hover {
             background-color: var(--background-color);
