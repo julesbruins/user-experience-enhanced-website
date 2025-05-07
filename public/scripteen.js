@@ -2,8 +2,6 @@
 document.documentElement.classList.add("js");
 
 const scrolldownButton = document.querySelector(".post-button");
-console.log(scrolldownButton);
-
 const closeButton = document.querySelector('[type="button"]');
 const form = document.querySelector("form");
 
@@ -15,18 +13,13 @@ window.addEventListener("keyup", handleKeyup);
 
 
 function handleKeyup(event) {
-    console.log("handleKeyup")
-
   if (event.code == "Escape") {
     form.classList.remove("is-visible");
   }
 }
 
 function toggleForm(event) {
-    console.log("toggleForm")
-
   event.preventDefault();
-  console.log("is-visible")
   
   form.classList.toggle("is-visible");
 }
@@ -40,6 +33,11 @@ const postForm = document.querySelector("#post-form")
 
 button.addEventListener("click", async function(event) {
    event.preventDefault()
+
+   const loadingState = document.querySelector(".loading-state")
+    loadingState.classList.add("show")
+    loadingState.classList.remove("hide")
+    
 
    let formData = new FormData(postForm)
 
@@ -63,11 +61,15 @@ button.addEventListener("click", async function(event) {
 
     formNameField.value = ""
     formMessageField.value = ""
+    
+    loadingState.classList.remove("show")
 
-    const loadingState = button.querySelector(".loading-state")
-    loadingState.classList.add("show")
-    loadingState.classList.remove("hide")
+    const succesMessage = document.querySelector(".succes-message")
+    succesMessage.classList.add("show")
 
+    setTimeout(() => {
+        succesMessage.classList.remove("show");
+    }, 2400);
 })
 
 
