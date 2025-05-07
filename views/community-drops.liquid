@@ -17,8 +17,9 @@
         </a>
     </header>
                 
-    <main>
+    <main class="theme-{{ task.theme }}">
         <h2 class="md">Nieuwste berichten</h2>
+        <p>{{ task.theme }}</p>
                     
         {% for message in messages %}
             <article class="drops">

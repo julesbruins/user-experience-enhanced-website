@@ -55,11 +55,20 @@ app.get('/post-page/:id', async function (request, response) {
 
 
 app.get('/community-drops/:id', async function (request, response) {
-  const messagesResponse = await fetch(`https://fdnd-agency.directus.app/items/dropandheal_messages?filter={"_and":[{"exercise":{"_eq":"${request.params.id}"}},{"from":{"_contains":"Jules_"}}]}&sort=-created`)
+  const messagesResponse = await fetch(`https://fdnd-agency.directus.app/items/dropandheal_messages?filter={"_and":[{"exercise":{"_eq":"${request.params.id}"}},{"from":{"_contains":"Jules_"}}]}`)
   const messagesResponseJSON = await messagesResponse.json()
+  
+  const excerciseResponse = await fetch(`https://fdnd-agency.directus.app/items/dropandheal_exercise/?fields=*&filter={"id":"${request.params.id}"}&limit=1`)
+  const excerciseResponseJSON = await excerciseResponse.json()
 
+  const taskId = excerciseResponseJSON.data[0].task;
+  const taskResponse = await fetch(`https://fdnd-agency.directus.app/items/dropandheal_task/?fields=*&filter={"id":"${taskId}"}&limit=1`)
+  const taskResponseJSON = await taskResponse.json()
+  console.log(taskResponseJSON.data)
+// haal theme op van de task met de bijbehorende opdrachten
+// geef die mee aan de view
 
-  response.render('community-drops.liquid', { id: request.params.id, messages: messagesResponseJSON.data, succes_message: request.query.succes })
+  response.render('community-drops.liquid', { id: request.params.id, messages: messagesResponseJSON.data, task: taskResponseJSON.data?.[0] || [], succes_message: request.query.succes })
 })
 
 

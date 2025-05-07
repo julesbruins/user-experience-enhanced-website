@@ -49,11 +49,11 @@ main {
     background-image:
             radial-gradient(
                 circle at -20em 50%,
-                var(--accent-color-one),
+                var(--accent-color),
                 transparent 30em),
             radial-gradient(
                 circle at calc(100% + 20em) 50%,
-                var(--accent-color-one),
+                var(--accent-color),
                 transparent 30em);
     background-attachment: fixed;
 
@@ -74,7 +74,7 @@ main {
 
     .post-button {
         border-radius: var(--border-radius);
-        background-color: var(--accent-color-one);
+        background-color: var(--button-color);
         text-decoration: none;
         padding: .5rem 1.5rem;
         cursor: pointer;
@@ -107,7 +107,7 @@ main {
 }
 
 .succes-message {
-    background-color: var(--accent-color-one);
+    background-color: var(--accent-color);
     padding: .5rem 1rem;
     border-radius: var(--border-radius);
     position: fixed;
