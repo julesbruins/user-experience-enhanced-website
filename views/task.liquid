@@ -41,12 +41,20 @@
         {% for excercise in task.exercise %}
         <article>
         <div class="container-card">   
+            {% comment %} type avif: deze zorgt voor een minder zware afbeelding, Dit zorgt ervoor dat het minder lang duurt voordat de afbeelding ingeladen is en de site dus sneller is. {% endcomment %}
+            {% comment %} type webp: dit is een fallback van de avif. Ook deze zorgt voor een kleinere kb van e afbeelding. {% endcomment %}
+            {% comment %} mochten de bovenste 2 niet ondersteund zijn, dat wordt alsnog de oorspronkelijke afbeelding ingeladen. {% endcomment %}
+        
             <picture>
                 <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ excercise.image.filename_disk }}?format=avif">
                 <source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ excercise.image.filename_disk }}?format=webp">
                 <img src="https://fdnd-agency.directus.app/assets/{{ excercise.image.filename_disk }}" width="{{ excercise.image.width }}" height="{{ excercise.image.height }}" alt="" class="exercise-img">
             </picture>
-            
+           
+            {% comment %} de img tag krijgt een vast width en height mee, deze worden opgehaald uit de database, want daarin staan de vast breedte en hoogte. Dit om te helpen layout shift te voorkomen. {% endcomment %}
+            {% comment %} Hiermee voorkom je layout shift, want hierdoor reserveert de browser alvast wat ruimte voor de afbeelding. {% endcomment %}
+
+
             <div class="bottom-grid">
                 <h3>{{ excercise.title }}</h3>
                 <a class="btn" href="/community-drops/{{excercise.id}}"><img src="../assets/community-drops.png" height="15" width="36" alt="">{{ messagesLength }} community drops</a>

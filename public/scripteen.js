@@ -34,14 +34,13 @@ const postForm = document.querySelector("#post-form")
 button.addEventListener("click", async function(event) {
    event.preventDefault()
 
-   const loadingState = document.querySelector(".loading-state")
-    loadingState.classList.add("show")
-    loadingState.classList.remove("hide")
-    
-
-   let formData = new FormData(postForm)
-
-    const response = await fetch(postForm.action, {
+   const loadingState = document.querySelector(".loading-state")    // na het submitten van het formulier wordt de class .loading-state geactiveerd
+    loadingState.classList.add("show")                              // je ziet dat er een laad icoon, oftwel de loading state, in beeld komt
+    loadingState.classList.remove("hide")                           // deze geeft feedback dat je submit aan het laden is om toegevoegd te worden.
+                                                                    // dit is fijne feedback als je internet bijvoorbeeld trager is, dat je weet 
+   let formData = new FormData(postForm)                            // dat je wel weet dat wat je gedaan hebt werkt, maar het gewoon wat trager is.
+                                                                    // de loading state komt pas tevoorschijn na het submitten en wordt ook weer 
+    const response = await fetch(postForm.action, {                 // verwijderd. zo zie je hem niet nog staan als je het formulier voor de 2e keer opent.
         method: postForm.method,
         body: new URLSearchParams(formData)
       })
