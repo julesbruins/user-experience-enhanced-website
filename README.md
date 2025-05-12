@@ -19,6 +19,7 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/enhance
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar je live site 🌐-->
 [Bekijk hier zelf de site!](https://user-experience-enhanced-website-pvnn.onrender.com/)
+
 Wat al stond was een website met verschillende rouwtaken, opdrachten en commmunity drops. Ook kon je al zelf een community drop achterlaten doormiddel van een post via de server en browser. Afgelopen weken hebben we gewerkt aan peformance. Hoe snel een website laadt bijvoorbeeld. Ook kwam hierbij progressive enhancement aan de orde. Dit houdt in dat je ervoor zorgt dat een website werkt voor iedereen. Denk hierbij bijvoorbeeld aan mensen die het gebruik van animaties uitzetten. Tot slot hebben we gewerkt met client side scripting. Je neemt zelf controle over de (in dit geval) de POST.
 
 
