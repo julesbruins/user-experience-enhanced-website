@@ -1,11 +1,13 @@
 /* FONTS INLADEN */
 @font-face {
-    font-family: "calvino-grande";
+    font-family: "calvino-grande", sans-serif;
     src: url(../assets/Calvino-Grande-Bold-trial.ttf);
+    font-display: swap;
 }
 @font-face {
-    font-family: "figtree";
+    font-family: "figtree", sans-serif;
     src: url('../assets/Figtree-VariableFont_wght.ttf');
+    font-display: swap;
 }
 
 @view-transition {
