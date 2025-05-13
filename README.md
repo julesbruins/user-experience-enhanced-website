@@ -10,6 +10,7 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/enhance
   * [Beschrijving](#beschrijving)
   * [Gebruik](#gebruik)
   * [Kenmerken](#kenmerken)
+  * [Ontwerpkeuzes](#ontwerpkeuzes)
   * [Installatie](#installatie)
   * [Bronnen](#bronnen)
   * [Licentie](#licentie)
@@ -41,6 +42,13 @@ De kenmerken zijn de volgende en hebben veelal te maken met peformance:
 * **progressive enhancement:** De progressive enhancement die hier van toepassing is op het formulier werkt als volgt. Helemaal enhanced wordt er gebruik gemaakt van [Javascript](https://github.com/julesbruins/user-experience-enhanced-website/blob/af91d9340b748b1e7ec56ffdc6d4bbd11dc6421c/public/scripteen.js#L2-L12) dat ervoor zorgt dat het formulier pas zichtbaar wordt na het klikken op 'plaats bericht'. Wanneer [Javascript door een gebruiker uitgeschakeld](https://github.com/julesbruins/user-experience-enhanced-website/blob/af91d9340b748b1e7ec56ffdc6d4bbd11dc6421c/public/styles/community-drops.css#L1C1-L5C2) is werkt het anders. Waneer je dan klikt op 'plaats bericht' dan staat het formulier onderaan de pagina en wordt je op de pagina doorgelink met een vloeiende scroll. Wanneer ook [animaties uit](https://github.com/julesbruins/user-experience-enhanced-website/blob/af91d9340b748b1e7ec56ffdc6d4bbd11dc6421c/views/community-drops.liquid#L37-L48) zijn, 'schiet' je als het ware naar het formulier toe onderaan de pagina, maar is gebruik van het formulier nog steeds mogelijk. 
 * **layout shifts:** We hebben ook nog gewerkt aan layout shifts. Hierbij ga je het probleem tegen dat als content nadat de pagina geladen en gerenderd is opeens verspringt. Hoe dit opgelost is kan je het best [hier teruglezen](https://github.com/julesbruins/user-experience-enhanced-website/issues/8).
 * responsive images: Tot slot heb ik [repsonsive images](https://github.com/julesbruins/user-experience-enhanced-website/blob/6f1385141bca73a9f492ee3eddda8cf9a5aa80b3/views/task.liquid#L44-L48) toegepast. Responsive images helpen de browser om het beste plaatje te kiezen voor de eindgebruiker. Daarmee houdt de browser rekening met de internet snelheid, het device en de grootte van het scherm.
+
+## Ontwerpkeuzes
+Ik heb voor de styling van het post-formulier de aangeleverde figma aangehouden. Verder heb ik zelf styling gekozen voor de loading en succes state. Ik heb hierbij voor de loading state gebruik gemaakt van de kleuren van het ontwerp. Deze past zich weer aan, aan de bijbehorende kleur van de taak. Voor de succes state heb ik dit hetzelfde gedaan met de kleuren. De melding heb ik dan weer een beetje gebaseerd op het ontwerp van de buttons. Verder heb ik afgelopen weken ook al gewerkt aan het [responsive ontwerp](https://github.com/julesbruins/the-web-is-for-everyone-interactive-functionality?tab=readme-ov-file#ontwerpkeuzes).
+
+<img width="218" alt="Screenshot 2025-05-13 at 10 48 32" src="https://github.com/user-attachments/assets/8bbd25d9-ced2-477d-a063-2363c56b9712" />
+<img width="101" alt="Screenshot 2025-05-13 at 10 48 54" src="https://github.com/user-attachments/assets/fc10433a-a16a-4fa3-80cd-ae6c99c137f5" />
+
 
 ## Installatie
 <!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
