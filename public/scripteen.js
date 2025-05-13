@@ -25,7 +25,6 @@ function toggleForm(event) {
 }
 
 
-
 // CLIENT SIDE FETCH
 const button = document.querySelector(".post-btn")
 const postForm = document.querySelector("#post-form")
