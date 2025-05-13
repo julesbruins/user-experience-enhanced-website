@@ -26,7 +26,11 @@
     <section class="intro">
         {% comment %} <h1 class="lg">{{ task.title }}</h1> {% endcomment %}
         <div class="task-img">
-            <img src="../assets/{{ task.theme }}.png" height="215" width="214" alt="">
+            <picture>
+                <source type="image/avif" srcset="../assets/{{ task.theme }}.avif">
+                <source type="image/webp" srcset="../assets/{{ task.theme }}.webp">
+                <img src="../assets/{{ task.theme }}.png" height="215" width="214" alt="">
+            </picture>  
         </div>
         <div class="flex-container">
             <h2 class="md">Rouwstappen van de dag</h2>
