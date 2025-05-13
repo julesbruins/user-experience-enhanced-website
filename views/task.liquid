@@ -55,6 +55,7 @@
         {% comment %} <h1 class="lg">{{ task.title }}</h1> {% endcomment %}
         <div class="task-img">
             <picture>
+                <source media="(orientation: portrait)" type="image/avif" srcset="../assets/{{ task.theme }}.avif" height="215" width="214">
                 <source type="image/avif" srcset="../assets/{{ task.theme }}.avif">
                 <source type="image/webp" srcset="../assets/{{ task.theme }}.webp">
                 <img src="../assets/{{ task.theme }}.png" height="215" width="214" alt="">
@@ -80,7 +81,7 @@
             <picture>
                 <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ excercise.image.filename_disk }}?format=avif">
                 <source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ excercise.image.filename_disk }}?format=webp">
-                <img src="https://fdnd-agency.directus.app/assets/{{ excercise.image.filename_disk }}" width="{{ excercise.image.width }}" height="{{ excercise.image.height }}" alt="" class="exercise-img">
+                <img src="https://fdnd-agency.directus.app/assets/{{ excercise.image.filename_disk }}" width="{{ excercise.image.width }}" height="{{ excercise.image.height }}" alt="" class="exercise-img" fetchpriority="high">
             </picture>
            
             {% comment %} de img tag krijgt een vast width en height mee, deze worden opgehaald uit de database, want daarin staan de vast breedte en hoogte. Dit om te helpen layout shift te voorkomen. {% endcomment %}
